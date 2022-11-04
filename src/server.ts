@@ -25,7 +25,7 @@ async function bootstrap() {
 
 
 
-    await fastify.listen({ port: 8080, /*host: '0.0.0.0'*/ })
+    await fastify.listen({ port: 8080, host: '0.0.0.0' })
 }
 bootstrap();
 //teste config
