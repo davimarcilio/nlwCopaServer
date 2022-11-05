@@ -60,12 +60,12 @@ export async function poolRoutes(fastify: FastifyInstance) {
         })
         if (!pool) {
             return res.status(400).send({
-                message: 'Pool not found'
+                message: 'Pool not found.'
             })
         }
         if (pool.participants.length > 0) {
             return res.status(400).send({
-                message: 'Você já está no bolão'
+                message: 'Você já está no bolão.'
             })
         }
         if (!pool.ownerId) {

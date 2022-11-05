@@ -1,6 +1,8 @@
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
+//import dotenv from "dotenv"
+//import { env } from 'process'
 import { poolRoutes } from './routes/pool';
 import { authRoutes } from './routes/auth';
 import { gameRoutes } from './routes/game';
@@ -8,6 +10,7 @@ import { guessRoutes } from './routes/guess';
 import { userRoutes } from './routes/user';
 
 async function bootstrap() {
+    //dotenv.config()
     const fastify = Fastify({
         logger: true,
     })
@@ -15,7 +18,7 @@ async function bootstrap() {
         origin: true,
     })
     await fastify.register(jwt, {
-        secret: 'dawhjkkdhwajkdhawkhdjksadjkaw;hf;h;fghf~~'
+        secret: 'dawhjkkdhwajkdhawkhdjksadjkaw;hf;h;fghf~~',
     })
     await fastify.register(poolRoutes)
     await fastify.register(authRoutes)
